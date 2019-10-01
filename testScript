@@ -1,0 +1,11 @@
+lpadmin -p Receipt -E -v serial:/dev/ttyS3?baud=9600 -o raw
+printf '\x0cHello\x0d\x0aWorld' > /dev/ttyS5
+#!/bin/bash
+#printf '\x1b\x70\x30\x40\xf0\x0d\x0a' > /dev/ttyS3
+printf '\x1b\x70\x00\x19\xfa' > /dev/ttyS3
+#printf '\x0cHello\x0d\x0aWorld' > /dev/ttyS3
+printf '\x0cHello\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld
+' > /dev/ttyS3
+printf '\x0cHello\x0d\x0aAltaWorld' > /dev/ttyS5
+#\x1b\x70\x30\x40\xf0\x0d\x0a
+#\x1b\x70\x00\x19\xfa
