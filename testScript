@@ -9,3 +9,9 @@ printf '\x0cHello\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWorld\x0d\x0aWor
 printf '\x0cHello\x0d\x0aAltaWorld' > /dev/ttyS5
 #\x1b\x70\x30\x40\xf0\x0d\x0a
 #\x1b\x70\x00\x19\xfa
+
+
+Solution :
+
+sudo lpadmin -p ReceiptPrinter -E -v serial:/dev/usb/lp0 -o raw
+sudo  lpoptions -d ReceiptPrinter
